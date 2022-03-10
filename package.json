@@ -13,5 +13,13 @@
   "license": "ISC",
   "dependencies": {
     "inquirer": "^8.2.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonathan-warkentine/Team-Profile-Generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jonathan-warkentine/Team-Profile-Generator/issues"
+  },
+  "homepage": "https://github.com/jonathan-warkentine/Team-Profile-Generator#readme"
 }
