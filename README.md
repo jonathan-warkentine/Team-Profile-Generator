@@ -7,6 +7,8 @@
 
   This app allows the user to input a team of managers, engineers, and/or students via a series of command prompts. After the prompts, an HTML page is generated for the user, with the inputted teammates' info displayed on cards on the homepage.
 
+  To run the tests, install jest (`npm i jest`) and run the command `npm test` in the parent directory.
+
   &nbsp;  
 
   ---
