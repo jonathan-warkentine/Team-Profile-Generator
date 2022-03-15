@@ -1,3 +1,5 @@
+const { assertNewExpression } = require("@babel/types");
+
 exports.prompts = [
     {
         name: 'name',
@@ -16,9 +18,22 @@ exports.prompts = [
         message: "What is your team member's email address?",
     },
     {
-        name: 'GitHub',
+        when: answers => answers.role === 'Engineer',
+        name: 'github',
         type: 'input',
-        message: "What is your team member's GitHub?"
+        message: "What is your engineer's GitHub?"
+    },
+    {
+        when: answers => answers.role === 'Intern',
+        name: 'school',
+        type: 'input',
+        message: "Where is your intern going to school?"
+    },
+    {
+        when: answers => answers.role === 'Manager',
+        name: 'officeNumber',
+        type: 'input',
+        message: "What is your manager's office number?"
     },
     {
         name: 'more',

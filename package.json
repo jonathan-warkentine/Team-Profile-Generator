@@ -7,12 +7,15 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "inquirer": "^8.2.1"
+    "cheerio": "^1.0.0-rc.10",
+    "inquirer": "^8.2.1",
+    "jest": "^27.5.1",
+    "test": "^0.6.0"
   },
   "repository": {
     "type": "git",
