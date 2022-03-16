@@ -4,6 +4,7 @@ const Manager = require('../lib/Manager');
 const Intern = require('../lib/Intern');
 const Team = require('../lib/Team');
 
+const fs = require("fs");
 jest.mock("fs");
 
 
@@ -58,8 +59,7 @@ describe('Class Team', () => {
 
     describe('method assembleHTML()', () => {
         
-        it('calls the fs.readFile and fs.writeFile', () => {
-            const fs = require("fs");
+        it('calls the fs.readFile method', () => {
             fs.readFileSync.mockReturnValue("Hello World!");
 
             const team = new Team ();
@@ -70,5 +70,14 @@ describe('Class Team', () => {
             expect(fs.writeFile).toHaveBeenCalled();
         })
         
+    })
+
+    describe('method writeFile(path, data)', () => {
+        it('calls the fs.writeFile() method', () => {
+            const team = new Team ();
+            team.save();
+
+            expect(fs.writeFile).toHaveBeenCalled();
+        })
     })
 });
