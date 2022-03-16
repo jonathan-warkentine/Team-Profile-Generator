@@ -4,6 +4,8 @@ const Manager = require('../lib/Manager');
 const Intern = require('../lib/Intern');
 const Team = require('../lib/Team');
 
+jest.mock("fs");
+
 
 describe('Class Team', () => {
     
@@ -37,5 +39,36 @@ describe('Class Team', () => {
         });
     });
 
-    // describe('The htmlCreateCard method')
+    describe('The htmlCreateCard() method', () => {
+        it('Returns a string of HTML', () => {
+            const team = new Team ();
+            
+            answers = {
+                name: "Bob",
+                email: "bob@bob.com",
+                github: "bob-github",
+                role: "Engineer"
+            };
+
+            team.addMember(answers);
+
+            expect(team.htmlCardCreate(team.members[0])).toContain('</div>')
+        })
+    })
+
+    describe('method assembleHTML()', () => {
+        
+        it('calls the fs.readFile and fs.writeFile', () => {
+            const fs = require("fs");
+            fs.readFileSync.mockReturnValue("Hello World!");
+
+            const team = new Team ();
+            team.assembleHTML();
+
+            // expect(fs.readFileSync).toHaveBeenCalledWith('./src/HTML/pageTemplate.html', 'utf-8');
+            expect(fs.readFileSync).toHaveBeenCalled();
+            expect(fs.writeFile).toHaveBeenCalled();
+        })
+        
+    })
 });

@@ -28,6 +28,8 @@
 
   You must have node installed on your machine in order to run this app. Run the command `npm i` to install the inquirer and fs dependencies.
 
+  In addition, you must install the 'cheerio' package (`npm i cheerio`).
+
   &nbsp;  
 
   ---
